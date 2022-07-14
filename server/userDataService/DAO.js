@@ -69,14 +69,15 @@ class DAO{
         const tempPath = file.path;
         const targetPath = path.join(__dirname, "./uploads/" + id + ".jpg");
         if (path.extname(file.originalname).toLowerCase() === ".jpg") {
-        fs.rename(tempPath, targetPath, err => {
-            if (err) return handleError(err, res);
-            return {ok:true};
-        });
+            fs.rename(tempPath, targetPath, err => {
+                if (err) return {ok:false};
+            });
+            return {ok: true};
         } else {
             fs.unlink(tempPath, err => {
-                return {ok:true};
+                return {ok:false};
             });
+            return {ok:false}
         }
     }
 }

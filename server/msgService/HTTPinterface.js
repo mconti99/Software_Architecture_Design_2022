@@ -4,6 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const RequestController = require('./requestController.js');
+const config = require('./config.js');
 
 class HTTPinterface{
     constructor(){
@@ -13,7 +14,7 @@ class HTTPinterface{
         this.controller = new RequestController()
         this.initServer();
     
-        this.port = 8890;
+        this.port = config.port;
         this.server.listen(process.env.PORT || this.port, () => {
             console.log(`HTTP Message Server started on port ${this.server.address().port} :)`);
         });
@@ -52,5 +53,4 @@ class HTTPinterface{
     }
 }
 
-
-const httpInterface = new HTTPinterface();
+module.exports = HTTPinterface;

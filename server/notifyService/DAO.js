@@ -1,14 +1,15 @@
 import mysql from 'mysql2/promise';
+import config from './config.js';
 
 export default class DAO{
     
     async connect(){
         try{
             var connection = await mysql.createConnection({
-                host     : 'localhost',
-                user     : 'root',
-                password : 'root',
-                database : 'hermes'
+                host     : config.host,
+                user     : config.user,
+                password : config.password,
+                database : config.database
             });
             return connection;
         }catch(err){

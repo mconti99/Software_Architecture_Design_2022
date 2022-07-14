@@ -1,7 +1,10 @@
 import fetch from 'node-fetch';
 import FormData from 'form-data';
-const userServerIp = 'localhost';
-const userServerPort = '8891' 
+
+import { userDataServiceIp, userDataServicePort } from '../config.js';
+
+const userServerIp = userDataServiceIp;
+const userServerPort = userDataServicePort;; 
 
 export default class UserDataConnection {
     async storeDataRequest(userName, puk, id){

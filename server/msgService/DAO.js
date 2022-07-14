@@ -1,14 +1,15 @@
 var mysql = require('mysql2/promise');
+const config = require('./config.js');
 
 class DAO{
     
     async connect(){
         try{
             var connection = await mysql.createConnection({
-                host     : 'localhost',
-                user     : 'root',
-                password : 'root',
-                database : 'hermes'
+                host     : config.host,
+                user     : config.user,
+                password : config.password,
+                database : config.database
             });
             return connection;
         }catch(err){
@@ -35,7 +36,6 @@ class DAO{
             let result = await connection.query("SELECT * FROM messages WHERE receiver = ?", [idDestinatario]);
             await connection.end();
             result = result[0]
-            console.log(result);
             return {list:result};
         }catch(err){
             console.log(err);

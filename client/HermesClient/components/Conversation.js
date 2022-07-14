@@ -1,9 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Avatar } from 'react-native-elements'
-
-const PLACEHOLDER_AVATAR = 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
-
+import {serverIp, serverPort} from '../config.js'
 
 export default class Conversation extends React.Component {
     constructor(props) {
@@ -38,7 +36,7 @@ export default class Conversation extends React.Component {
                 <Avatar
                   rounded
                   source={{
-                    uri: 'http://109.116.253.181:8888/avatar/' + this.props.id +'/'+ (new Date()).getMinutes()
+                    uri: 'http://' + serverIp + ':' + serverPort +'/avatar/' + this.props.id +'/'+ (new Date()).getMinutes()
                   }}
                     size= {45}
                 />

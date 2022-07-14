@@ -1,20 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, ActivityIndicator, TouchableOpacity, Image, ScrollView } from 'react-native';
-
+import { StyleSheet, Text, View, ActivityIndicator, TouchableOpacity, Image, ScrollView } from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
-
-import * as Font from 'expo-font';
-
 import BouncyCheckbox from "react-native-bouncy-checkbox";
-import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import RegistrationPage from './registrationPage.js'
 
-//let customFonts = {
-  //'Kufam-SemiBoldItalic': require('../assets/fonts/Kufam-SemiBoldItalic.ttf'),
-  //'JosefinSans-Regular': require('../assets/fonts/JosefinSans-Regular.ttf')
-//};
 export default class LoginPage extends React.Component {
   constructor(props){
     super(props)
@@ -33,16 +23,7 @@ export default class LoginPage extends React.Component {
     this.setRegisterPage = this.setRegisterPage.bind(this)
     this.loginPress = this.loginPress.bind(this)
   }
-/*
-  async _loadFontsAsync() {
-    await Font.loadAsync(customFonts);
-    this.setState({ fontsLoaded: true });
-  }
 
-  componentDidMount() {
-    this._loadFontsAsync();
-  }
-*/
   setRegisterPage(value){
     this.setState({registerPage:value})
   }
@@ -149,7 +130,6 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   text: {
-    //fontFamily: 'Kufam-SemiBoldItalic',
     fontSize: 28,
     marginBottom: 10,
     color: '#051d5f',
@@ -166,7 +146,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     color: '#2e64e5',
-    //fontFamily: 'Lato-Regular',
   },
   checkbox: {
     alignSelf: "center",

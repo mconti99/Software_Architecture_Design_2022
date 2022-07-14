@@ -1,4 +1,4 @@
-import { serverIp, serverPort } from "./networkConfig"
+import { serverIp, serverPort } from "../config.js";
 
 export default class NetworkAccess {
     constructor(controller, ws = `ws://${serverIp}:${serverPort}/`) {

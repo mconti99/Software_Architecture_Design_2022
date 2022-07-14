@@ -1,8 +1,9 @@
-import { response } from 'express';
 import fetch from 'node-fetch';
 
-const msgServerIp = 'localhost';
-const msgServerPort = '8892' 
+import { notifyServiceIp, notifyServicePort } from '../config.js';
+
+const msgServerIp = notifyServiceIp;
+const msgServerPort = notifyServicePort; 
 
 export default class msgSerivceConnection{
     async insert(id, notifyToken){

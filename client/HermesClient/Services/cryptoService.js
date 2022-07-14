@@ -1,5 +1,6 @@
 import * as CryptoJS from "react-native-crypto-js";
 var RSAKey = require('react-native-rsa');
+import uuid from 'uuid';
 
 export default class Crypto {
     constructor(){
@@ -27,7 +28,7 @@ export default class Crypto {
         return {puk,prk};
     }
     generateKey(){
-        const key = "pippozzo";//uuid.v4();
+        const key = uuid.v4();
         return key;
     }
     async encryptKey(key, puk){

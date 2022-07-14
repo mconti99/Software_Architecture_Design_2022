@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, Text } from 'react-native';
+import React from 'react';
+import { Text, View, TextInput, TouchableOpacity, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import RegistrationPage from './registrationPage.js'
+
 
 export default class CreateChat extends React.Component {
   constructor(props){
@@ -13,7 +13,6 @@ export default class CreateChat extends React.Component {
     this.controller = props.controller
     this.closePage = props.closePage
   }
-
 
   render(){
     if(this.state.newChat == true){

@@ -1,8 +1,9 @@
-import { response } from 'express';
 import fetch from 'node-fetch';
 
-const msgServerIp = 'localhost';
-const msgServerPort = '8890' 
+import { msgServiceIp, msgServicePort } from '../config.js';
+
+const msgServerIp = msgServiceIp;
+const msgServerPort = msgServicePort;
 
 export default class msgSerivceConnection{
     async storeMsg(idMittente, idDestinatario, text, keyD, timestamp){

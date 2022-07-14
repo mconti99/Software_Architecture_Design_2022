@@ -2,8 +2,9 @@ const express = require('express');
 const http = require('http');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
 const RequestController = require('./requestController.js');
+
+const config = require('./config.js');
 
 class HTTPinterface{
     constructor(){
@@ -13,7 +14,7 @@ class HTTPinterface{
         this.controller = new RequestController()
         this.initServer();
     
-        this.port = 8889;
+        this.port = config.port;
         
         this.server.listen(process.env.PORT || this.port, () => {
             console.log(`HTTP auth Server started on port ${this.server.address().port} :)`);
@@ -31,7 +32,7 @@ class HTTPinterface{
         this.app.post('/logout', this.logout.bind(this));
         this.app.post('/checkToken', this.checkToken.bind(this));
         
-        this.app.post('/activate', this.activate.bind(this)); //implementa nel chathandler
+        this.app.post('/activate', this.activate.bind(this)); 
     }
 
     async register(req, res){
@@ -41,7 +42,6 @@ class HTTPinterface{
 
     async login(req, res){
         const r = await this.controller.login(req.body.userName, req.body.password);
-        console.log("Login ",r)
         res.send(JSON.stringify(r));
     }
 
@@ -52,7 +52,6 @@ class HTTPinterface{
 
     async checkToken(req, res){
         const r = await this.controller.checkToken(req.body.id, req.body.token);
-        console.log("CheckToken ",req.body.token)
         res.send(JSON.stringify(r));
     }
 
@@ -62,8 +61,4 @@ class HTTPinterface{
     }
 }
 
-
 module.exports = HTTPinterface;
-
-
-const httpInterface = new HTTPinterface();

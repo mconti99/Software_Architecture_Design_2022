@@ -5,7 +5,9 @@ import bodyParser from 'body-parser';
 
 import RequestController from './requestController.js';
 
-class HTTPinterface{
+import config from './config.js';
+
+export default class HTTPinterface{
     constructor(){
         this.app = express();
         this.server = http.createServer(this.app);
@@ -13,7 +15,7 @@ class HTTPinterface{
         this.controller = new RequestController()
         this.initServer();
     
-        this.port = 8892;
+        this.port = config.port;
         this.server.listen(process.env.PORT || this.port, () => {
             console.log(`HTTP Notify Server started on port ${this.server.address().port} :)`);
         });
@@ -45,6 +47,3 @@ class HTTPinterface{
         res.send(JSON.stringify({ok:true}));
     }
 }
-
-
-const httpInterface = new HTTPinterface();

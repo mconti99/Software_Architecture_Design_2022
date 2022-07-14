@@ -1,14 +1,16 @@
 const uuid = require('uuid');
 var mysql = require('mysql2/promise');
+const config = require('./config.js');
+
 
 class DAO{
     async connect(){
         try{
             var connection = await mysql.createConnection({
-                host     : 'localhost',
-                user     : 'root',
-                password : 'root',
-                database : 'hermes'
+                host     : config.host,
+                user     : config.user,
+                password : config.password,
+                database : config.database
             });
             return connection;
         }catch(err){
@@ -29,8 +31,6 @@ class DAO{
         }
     }
     
-    
-    //confirm user account
     async confirmAccount(id){
         try{
             var connection = await this.connect();

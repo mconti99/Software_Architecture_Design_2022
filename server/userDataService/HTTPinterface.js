@@ -9,6 +9,8 @@ const fs = require("fs");
 
 const RequestController = require('./requestController.js');
 
+const config = require('./config.js');
+
 class HTTPinterface{
     constructor(){
         this.app = express();
@@ -17,7 +19,7 @@ class HTTPinterface{
         this.controller = new RequestController()
         this.initServer();
     
-        this.port = 8891;
+        this.port = config.port;
         this.server.listen(process.env.PORT || this.port, () => {
             console.log(`HTTP user data Server started on port ${this.server.address().port} :)`);
         });
@@ -65,5 +67,4 @@ class HTTPinterface{
     }
 }
 
-
-const httpInterface = new HTTPinterface();
+module.exports = HTTPinterface;

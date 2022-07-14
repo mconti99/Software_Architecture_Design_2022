@@ -4,6 +4,7 @@ import { StyleSheet, View, TextInput, TouchableOpacity, Dimensions, ScrollView, 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/Entypo'
 import Message from "../components/Message";
+import {serverIp, serverPort} from '../config.js'
 
 export default class ChatPage extends React.Component {
   constructor(props){
@@ -88,7 +89,7 @@ export default class ChatPage extends React.Component {
 
         <Avatar rounded
             source={{
-            uri: 'http://109.116.253.181:8888/avatar/' + this.id +'/'+ (new Date()).getMinutes()
+              uri: 'http://' + serverIp + ':' + serverPort +'/avatar/' + this.id +'/'+ (new Date()).getMinutes()
            }}
             size = {30}
           />

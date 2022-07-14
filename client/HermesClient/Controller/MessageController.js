@@ -43,7 +43,6 @@ export default class MessageController {
     async getStoredMsg(id, token){
         const msgs = await this.network.rcvOldMsgReq(id, token);
         for(let msg of msgs.list){
-            const id = reply.id
             if(!this.loggedUser.chats.has(msg.sender)){
                 const res = await this.createChat.createChatFromId(msg.sender)
             } 

@@ -1,8 +1,9 @@
 import fetch from 'node-fetch';
 
-const authServerIp = 'localhost';
-const authServerPort = '8889' 
+import { authServiceIp, authServicePort } from '../config.js';
 
+const authServerIp = authServiceIp;
+const authServerPort = authServicePort;
 
 export default class AuthServiceConnection{
     async registerRequest(userName, password, email, puk, prk){

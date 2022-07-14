@@ -6,8 +6,9 @@ import Icon2 from 'react-native-vector-icons/FontAwesome'
 import Conversation from "../components/Conversation";
 import { SearchBar } from "@rneui/themed";
 import * as ImagePicker from 'expo-image-picker';
-
 import ChatPage from './chatPage.js'
+
+import {serverIp, serverPort} from '../config.js'
 
 export default class MainPage extends React.Component {
   constructor(props){
@@ -154,7 +155,7 @@ export default class MainPage extends React.Component {
                   <Avatar
                     rounded
                     source={{
-                      uri: 'http://109.116.253.181:8888/avatar/' + this.id +'/'+ (new Date()).getMinutes()
+                      uri: 'http://' + serverIp + ':' + serverPort +'/avatar/' + this.id +'/' + (new Date()).getMinutes()
                     }}
                     size= {60}
                   />

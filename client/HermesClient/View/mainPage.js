@@ -78,13 +78,18 @@ export default class MainPage extends React.Component {
 
   picker = async () => { 
       let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
         aspect: [1, 1],
-      quality: 1,
+        quality: 1,
     })
     if (!result.cancelled) {
-      this.controller.setAvatar(result.uri)
+      const res = await this.controller.setAvatar(result.uri)
+      if(res == true){
+        Alert.alert("L'avatar è stato aggiornato, sarà mostrato a breve!")
+      } else {
+        Alert.alert("Errore, l'avatar è troppo grande o il formato non è compatibile")
+      }
     } 
   }
 

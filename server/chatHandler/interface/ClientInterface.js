@@ -27,7 +27,11 @@ export default class ClientInterface {
     }
 
     initServer(){
-        this.multer = multer();
+        this.multer = multer({limits: {
+            fieldNameSize: 300,
+            fileSize: 1048576, // 10 Mb
+            files: 1
+          }});
 
         this.app.use(bodyParser.urlencoded({ extended: true }));
         this.app.use(bodyParser.json());

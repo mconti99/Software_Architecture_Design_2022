@@ -1,8 +1,4 @@
 
- 
- <!-- For Ian and Luigi -->
-<!-- Remember to fix the links in the Documentation section if you clone this file -->
-
 # Software Architecture Design Project
 
 Repository of the project carried out for the Software Architecture Design exam, for the Master's Degree course in Computer Engineering at the Federico II University of Naples.
@@ -25,7 +21,7 @@ The goal is to create an open source instant messaging application based on the 
 - Developing a Smartphone App with React Native framework
 - Implementing a microservice architecture via API REST
 - Analysing a software system according to different architectural views
-- Performing Unit and Functional Testing
+- Performing Component and Functional Testing
 
 ## Tech Stack ⚙
 

@@ -7,7 +7,7 @@ Repository of the project carried out for the Software Architecture Design exam,
 
 - Francesco Iannaccone ([@francescoiannaccone](https://github.com/francescoiannaccone))
 - Matteo Conti ([@mconti99](https://github.com/mconti99))
-- Alfonso Conte ([@alfonte](https://github.com/alfonte))
+- Alfonso Conte ([@alfonte](https://github.com/AlfonsoConte))
 - Daniele Fazzari ([@DanieleFazzari](https://github.com/DanieleFazzari))
 
 ## Project Goal 🚩

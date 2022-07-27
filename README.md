@@ -57,7 +57,7 @@ with an indication of the tools and any agile techniques/practices used. [Chapte
 
 - Documentation of the implementation of the software developed and instructions for the configuration, installation and execution of the software produced, including descriptions of the files created and design patterns implemented, detailed sequence diagrams, E-R models. [Chapter 5](https://github.com/mconti99/Software_Architecture_Design_2022/blob/main/Documentazione_SAD.pdf)
 
-- Description of tests performed, including unit and functional tests. [Chapter 6](https://github.com/mconti99/Software_Architecture_Design_2022/blob/main/Documentazione_SAD.pdf)
+- Description of tests performed, including component and functional tests. [Chapter 6](https://github.com/mconti99/Software_Architecture_Design_2022/blob/main/Documentazione_SAD.pdf)
 
 ## Video Demo 📹
 

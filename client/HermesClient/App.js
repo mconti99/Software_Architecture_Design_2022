@@ -18,7 +18,6 @@ export default class App extends React.Component {
     setLoggedState = this.setLoggedState
 
     this.controller = new Controller()
-    const app = this
   }
   
   async componentDidMount(){

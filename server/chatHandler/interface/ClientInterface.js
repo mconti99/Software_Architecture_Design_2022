@@ -3,7 +3,6 @@ import  express  from 'express';
 import multer from 'multer';
 import http from 'http';
 import cors from 'cors';
-import fetch from 'node-fetch';
 import bodyParser from 'body-parser';
 import request from 'request';
 import ControllerFacade from '../controller/controllerFacade.js';
